@@ -6,7 +6,8 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-
+	<!-- load the property file here -->
+	<context:property-placeholder location="classpath:sport.properties"/>
 	<!-- Define your beans here -->
 	<!-- Define your dependency here -->
 	<bean id ="myFortuneService" class="com.senseOfCode.springDemo.HappyFortuneService"></bean>
@@ -14,11 +15,18 @@
 	<!-- set up constructor injection -->
 	<constructor-arg ref= "myFortuneService"></constructor-arg>
 	</bean>
-	
+	<!-- for using setter injection -->
 	<bean id="myBaseBallCoach" class="com.senseOfCode.springDemo.BaseBallCoach">	
 	<!-- set up constructor injection -->
 	<property name= "fortuneService" ref="myFortuneService"></property>
 	<property name= "team" value = "Mumbai indians"></property>
+	</bean>
+	<!-- for using properties file -->
+	<bean id="myBaseBallCoach1" class="com.senseOfCode.springDemo.BaseBallCoach">	
+	<!-- set up constructor injection -->
+	<property name= "fortuneService" ref="myFortuneService"></property>
+	<property name= "team" value = "Mumbai indians"></property>
+	<property name= "email" value = "${foo.email}"></property>
 	</bean>
 
 </beans>
