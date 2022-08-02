@@ -14,5 +14,10 @@
 	<!-- set up constructor injection -->
 	<constructor-arg ref= "myFortuneService"></constructor-arg>
 	</bean>
+	
+	<bean id="myBaseBallCoach" class="com.senseOfCode.springDemo.BaseBallCoach">	
+	<!-- set up constructor injection -->
+	<property name= "fortuneService" ref="myFortuneService"></property>
+	</bean>
 
 </beans>
