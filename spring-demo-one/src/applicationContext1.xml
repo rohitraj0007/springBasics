@@ -18,6 +18,7 @@
 	<bean id="myBaseBallCoach" class="com.senseOfCode.springDemo.BaseBallCoach">	
 	<!-- set up constructor injection -->
 	<property name= "fortuneService" ref="myFortuneService"></property>
+	<property name= "team" value = "Mumbai indians"></property>
 	</bean>
 
 </beans>

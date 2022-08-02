@@ -5,6 +5,7 @@ public class BaseBallCoach implements Coach{
 	
 	//define a private field for the dependency
 		private FortuneService fortuneService;
+		private String team;
 		
 		//define a default constructor 
 		public BaseBallCoach() {
@@ -14,10 +15,14 @@ public class BaseBallCoach implements Coach{
 		public void setFortuneService (FortuneService fortuneService) {
 			this.fortuneService = fortuneService;
 		}
+		
+		public void setTeam(String team) {
+			this.team = team;
+		}
 
 @Override
 public String getDailyWorkout() {
-	return "spend 30 minutes on baseBall";
+	return "spend 30 minutes on baseBall team: "+team;
 }
 
 @Override
